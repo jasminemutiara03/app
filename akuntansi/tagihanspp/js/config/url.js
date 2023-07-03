@@ -1,1 +1,1 @@
-export let URLPenggajian = "https://penggajian.herokuapp.com/karyawan"
+export let URLTagihanspp = "https://tagihan1-72686b671e17.herokuapp.com/tagihanspp";

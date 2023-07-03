@@ -1,32 +1,25 @@
 import { addInner } from "https://jscroot.github.io/element/croot.js";
-import { get } from "https://jscroot.github.io/api/croot.js"; 
+import { get } from "https://jscroot.github.io/api/croot.js";
 import { getRandomColorName } from "./randomcol.js";
-import {rowtabel, svg ,jbt} from "../template/tabel.js";
-import { URLPenggajian } from "../config/url.js";
-get(URLPenggajian, tabelContent);
- 
+import { rowtabel, svg, smt } from "../template/tabel.js";
+import { URLTagihanspp } from "../config/url.js";
+get(URLTagihanspp, tabelContent);
 
-function tabelContent(result){
-    userTable(result);
+function tabelContent(result) {
+  userTable(result);
 }
 
 function userTable(jsonParse){
     let row = '';
     jsonParse.forEach((element) => {
     let svgicon = svg.replace("#WARNA#", getRandomColorName());
-    let jabat = jbt.replace("#col#", getRandomColorName());
-    console.log(jabat);
-    row = rowtabel.replace("#nama#", element.nama).
-        replace("#status#", element.status).
-        replace("#jbt#", jabat).
-        replace("#jabatan#", element.jabatan).
-        replace("#gaji#", element.gaji).
+    let semester = smt.replace("#col#", getRandomColorName());
+    console.log(semester);
+    row = rowtabel.replace("#namamahasiswa#", element.namamahasiswa).
+        replace("#nim#", element.nim).
+        replace("#smt#", semester).
+        replace("#biaya_spp#", element.biaya_spp).
         replace("#SVG#", svgicon);
     addInner("demo",row);
     });
 }
-     
-      
-  
-  
-     
